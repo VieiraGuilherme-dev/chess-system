@@ -89,9 +89,6 @@ public class ChessMatch {
         else{
             enPassantVulnerable = null;
         }
-
-
-
         return (ChessPiece) capturedPiece;
     }
     private Piece makeMove(Position source, Position target) {
@@ -141,13 +138,28 @@ public class ChessMatch {
             board.placePiece(rook, sourceT);
             rook.decreaseMoveCount();
         }
-        //*specialMove castling kingside rook
+        //*specialMove castling queenside rook
         if(p instanceof  King && target.getColumn() == source.getColumn() - 2){
             Position sourceT = new Position(source.getRow(), source.getColumn() - 4);
             Position targetT = new Position(source.getRow(), source.getColumn() - 1);
             ChessPiece rook = (ChessPiece) board.removePiece(targetT);
             board.placePiece(rook, sourceT);
             rook.decreaseMoveCount();
+        }
+        //#specialMove en passant
+        if(p instanceof Pawn) {
+            if(source.getColumn() != target.getColumn() && capturedPiece == null){
+                ChessPiece pawn = (ChessPiece)board.removePiece(target);
+                Position pawnPosition;
+                if(p.getColor() == Color.WHITE){
+                    pawnPosition = new Position(3, target.getColumn());
+                }
+                else{
+                    pawnPosition = new Position(4, target.getColumn());
+                }
+                board.placePiece(pawn, pawnPosition);
+                capturedPiece = board.removePiece(pawnPosition);
+            }
         }
     }
     private void validateSourcePosition(Position position) {
