@@ -96,4 +96,3 @@ private boolean testCheckMate(Color color) {
     return true;
 }
 
-
