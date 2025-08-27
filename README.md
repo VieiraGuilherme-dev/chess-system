@@ -27,8 +27,6 @@ Este é um projeto de um **jogo de xadrez em Java**, desenvolvido para rodar no 
 ---
 
 
----
-
 ##  Diagrama UML
 
 Abaixo está o diagrama UML representando a estrutura das classes do projeto: ![Diagrama de Classes](src/images/chess-system-design.png)
@@ -40,6 +38,57 @@ Abaixo está o diagrama UML representando a estrutura das classes do projeto: ![
 1. **Clone o repositório:**
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
+
+   Principais Recursos Implementados
+
+✔️ Movimentos válidos para todas as peças
+✔️ Regras especiais: Roque, En Passant, Promoção
+✔️ Tratamento de jogadas inválidas
+✔️ Indicação de xeque e xeque-mate
+✔️ Exibição do tabuleiro atualizado após cada jogada
+
+🔑 Exemplos de Código Importantes
+✅ Movimento Especial – En Passant
+if (p instanceof Pawn) {
+    if (source.getColumn() != target.getColumn() && capturedPiece == null) {
+        Position pawnPosition;
+        if (p.getColor() == Color.WHITE) {
+            pawnPosition = new Position(target.getRow() + 1, target.getColumn());
+        } else {
+            pawnPosition = new Position(target.getRow() - 1, target.getColumn());
+        }
+        capturedPiece = board.removePiece(pawnPosition);
+        capturedPieces.add(capturedPiece);
+    }
+}
+
+✅ Checando Xeque-Mate
+private boolean testCheckMate(Color color) {
+    if (!testCheck(color)) {
+        return false;
+    }
+    for (ChessPiece piece : piecesOnTheBoard) {
+        if (piece.getColor() == color) {
+            boolean[][] mat = piece.possibleMoves();
+            for (int i = 0; i < board.getRows(); i++) {
+                for (int j = 0; j < board.getColumns(); j++) {
+                    if (mat[i][j]) {
+                        Position source = piece.getChessPosition().toPosition();
+                        Position target = new Position(i, j);
+                        Piece capturedPiece = makeMove(source, target);
+                        boolean testCheck = testCheck(color);
+                        undoMove(source, target, capturedPiece);
+                        if (!testCheck) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return true;
+}
+
 
 
 
