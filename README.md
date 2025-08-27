@@ -19,7 +19,7 @@ Este é um projeto de um **jogo de xadrez em Java**, desenvolvido para rodar no 
 
 ##  Tecnologias Utilizadas
 
-- **Java 24+**
+![JAVA 17](https://img.shields.io/badge/JAVA_17-orange)
 - **Paradigma Orientado a Objetos**
 - **Estruturas de Dados** (arrays, listas, enums)
 - **Pacotes e organização modular**
