@@ -96,3 +96,5 @@ private boolean testCheckMate(Color color) {
     return true;
 }
 
+Contato - gv524003@gmail.com
+
