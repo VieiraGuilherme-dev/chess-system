@@ -29,11 +29,10 @@ Este é um projeto de um **jogo de xadrez em Java**, desenvolvido para rodar no 
 
 ---
 
-## 📌 Diagrama UML
+##  Diagrama UML
 
 Abaixo está o diagrama UML representando a estrutura das classes do projeto:
-
-![Diagrama UML](623f59fe-3ad1-49e3-b64e-2e4de576cbf9.png)
+images/chess-system-design.png
 
 ---
 
@@ -43,9 +42,8 @@ Abaixo está o diagrama UML representando a estrutura das classes do projeto:
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
 
-# Diagrama de Classes do Sistema de Xadrez
 
-![Diagrama de Classes](assets/chess-system-design.png)
+
 
 
 
