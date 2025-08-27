@@ -31,8 +31,7 @@ Este é um projeto de um **jogo de xadrez em Java**, desenvolvido para rodar no 
 
 ##  Diagrama UML
 
-Abaixo está o diagrama UML representando a estrutura das classes do projeto:
-images/chess-system-design.png
+Abaixo está o diagrama UML representando a estrutura das classes do projeto: ![Diagrama de Classes](images/chess-system-design.png)
 
 ---
 
