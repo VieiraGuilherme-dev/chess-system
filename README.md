@@ -39,16 +39,21 @@ Abaixo está o diagrama UML representando a estrutura das classes do projeto: ![
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
 
-   Principais Recursos Implementados
+## ✔️ Funcionalidades Implementadas
 
-✔️ Movimentos válidos para todas as peças
-✔️ Regras especiais: Roque, En Passant, Promoção
-✔️ Tratamento de jogadas inválidas
-✔️ Indicação de xeque e xeque-mate
-✔️ Exibição do tabuleiro atualizado após cada jogada
+* Movimentos válidos para todas as peças
+* Regras especiais: Roque, En Passant, Promoção
+* Tratamento de jogadas inválidas
+* Indicação de xeque e xeque-mate
+* Exibição do tabuleiro atualizado após cada jogada
 
-🔑 Exemplos de Código Importantes
-✅ Movimento Especial – En Passant
+---
+
+## 🔑 Exemplos de Código Importantes
+
+### ✅ Movimento Especial – En Passant
+
+```java
 if (p instanceof Pawn) {
     if (source.getColumn() != target.getColumn() && capturedPiece == null) {
         Position pawnPosition;
@@ -62,7 +67,9 @@ if (p instanceof Pawn) {
     }
 }
 
-✅ Checando Xeque-Mate
+Checando Xeque-Mate
+Java
+
 private boolean testCheckMate(Color color) {
     if (!testCheck(color)) {
         return false;
@@ -88,10 +95,5 @@ private boolean testCheckMate(Color color) {
     }
     return true;
 }
-
-
-
-
-
 
 
