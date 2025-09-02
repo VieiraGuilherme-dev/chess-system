@@ -97,4 +97,3 @@ private boolean testCheckMate(Color color) {
 }
 
 Contato - gv524003@gmail.com
-
